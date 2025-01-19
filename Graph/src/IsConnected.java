@@ -1,14 +1,8 @@
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Scanner;
 
 public class IsConnected {
-    public static boolean isConnected(int[][] graph) {
-        boolean[] visited = new boolean[graph.length];
-        int vetexfinder = helperIsConnected(graph, visited, 0);
-        if (graph.length == vetexfinder) {
-            return true;
-        }
-        return false;
-    }
 
     private static int helperIsConnected(int[][] graph, boolean[] vistited, int sv) {
         int count = 1;
@@ -19,6 +13,15 @@ public class IsConnected {
             }
         }
         return count;
+    }
+
+    public static boolean isConnected(int[][] graph) {
+        boolean[] visited = new boolean[graph.length];
+        int vetexfinder = helperIsConnected(graph, visited, 0);
+        if (graph.length == vetexfinder) {
+            return true;
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -39,5 +42,6 @@ public class IsConnected {
         }
         System.out.println(isConnected(graph));
     }
+
 }
 
